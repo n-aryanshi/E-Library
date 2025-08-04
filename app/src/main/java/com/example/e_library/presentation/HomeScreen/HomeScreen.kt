@@ -3,6 +3,8 @@ package com.example.e_library.presentation.HomeScreen
 
 import android.R.attr.navigationIcon
 import android.R.attr.onClick
+import androidx.compose.material3.*
+import androidx.compose.material.icons.filled.Menu
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -42,12 +44,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.e_library.R
+import com.example.e_library.presentation.navigation.Routes
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navHostController: NavHostController) {
+
 
     //initializing drawer with its initial state
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -178,7 +180,17 @@ fun HomeScreen(navHostController: NavHostController) {
                 },
             navigationIcon = {
                 IconButton(
-                    onClick = { })
+                    onClick = {
+                        coroutineScope.launch{
+                            drawerState.open()
+                        }
+                    }){
+
+                    Icon(
+                        imageVector = Icon.Filled.Menu,
+                        contentDescription = "open dresser"
+                    )
+                }
             }
 
 
@@ -187,4 +199,5 @@ fun HomeScreen(navHostController: NavHostController) {
         }
 
     }
+
 }
