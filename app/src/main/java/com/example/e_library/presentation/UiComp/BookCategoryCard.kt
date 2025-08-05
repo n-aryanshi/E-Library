@@ -1,5 +1,6 @@
 package com.example.e_library.presentation.UiComp
 
+import android.R.attr.category
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil3.compose.SubcomposeAsyncImage
+import com.example.e_library.presentation.navigation.Routes
 
 
 @Composable
@@ -34,7 +36,7 @@ fun BookCategoryCard(
     Card(
         modifier = Modifier.padding(4.dp)
             .clickable {
-//                navHostController.navigate
+                navHostController.navigate(Routes.BooksByCategory(cName))
             },
 
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),

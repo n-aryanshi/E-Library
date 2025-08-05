@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil3.compose.SubcomposeAsyncImage
 import com.example.e_library.presentation.effects.imageAni
+import com.example.e_library.presentation.navigation.Routes
 
 @Composable
 fun BookCard(
@@ -44,7 +45,7 @@ fun BookCard(
                 .padding(horizontal = 12.dp, vertical = 8.dp)
                 .fillMaxWidth()
                 .clickable {
-                   // navHostController.navigate
+                    navHostController.navigate(Routes.ShowPdfScreen(url = pdfUrl))
                 },
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
             shape = RoundedCornerShape(12.dp),
