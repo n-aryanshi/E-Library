@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.example.e_library.presentation.AllBooksByCategory.BooksByCategoryScreen
 import com.example.e_library.presentation.UiComp.PdfViewerScreen
+import com.example.e_library.presentation.HomeScreen.HomeScreen
 
 @Composable
 fun NavGraph(nhc: NavHostController) {

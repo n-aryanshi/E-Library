@@ -37,7 +37,7 @@ import androidx.navigation.NavHostController
 import com.example.e_library.presentation.navigation.Routes
 
 @Composable
-fun HomeScreen(navHostController: NavHostController) {
+fun HomeScreen() {
 
 
     //initializing drawer with its initial state
