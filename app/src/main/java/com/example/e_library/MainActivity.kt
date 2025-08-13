@@ -25,12 +25,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ELibraryTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
 
                     val navHostController = rememberNavController()
                     NavGraph(nhc = navHostController)
 
-                }
+
             }
         }
     }

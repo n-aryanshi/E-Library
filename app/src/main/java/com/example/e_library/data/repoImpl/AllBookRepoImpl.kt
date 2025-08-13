@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 class AllBookRepoImpl @Inject constructor(val firebaseDatabase : FirebaseDatabase) : AllBookRepo {
     override fun getAllBooks(): Flow<ResultState<List<Book>>> = callbackFlow {
-       trySend(ResultState.Loading)
+        trySend(ResultState.Loading)
 
         val valueEvent = object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -83,11 +83,11 @@ class AllBookRepoImpl @Inject constructor(val firebaseDatabase : FirebaseDatabas
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 var items: List<Book> = emptyList()
-                    items = snapshot.children.filter{value ->
-                        value.getValue(Book::class.java)!!.category == category
-                    }.map{value->
-                        value.getValue(Book::class.java)!!
-                    }
+                items = snapshot.children.filter{value ->
+                    value.getValue(Book::class.java)!!.category == category
+                }.map{value->
+                    value.getValue(Book::class.java)!!
+                }
 
 
                 trySend(ResultState.Success(items))
